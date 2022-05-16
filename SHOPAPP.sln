@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHOPAPP.WEBUI", "SHOPAPP.WEBUI\SHOPAPP.WEBUI.csproj", "{D5B45D2D-B6E6-4C66-BD7E-A851A56123F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHOPAPP.WEBUI", "SHOPAPP.WEBUI\SHOPAPP.WEBUI.csproj", "{D5B45D2D-B6E6-4C66-BD7E-A851A56123F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
