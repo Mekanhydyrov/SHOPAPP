@@ -1,39 +1,48 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SHOPAPP.WEBUI.Models;
-using SHOPAPP.WEBUI.ViewModels;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using shopapp.webui.Data;
+using shopapp.webui.Models;
 
-namespace SHOPAPP.WEBUI.Controllers
+namespace shopapp.webui.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController:Controller
     {
         public IActionResult Index()
         {
-            return View("Index");
+            var product = new Product {Name="Iphone X",Price=6000,Description="güzel telefon"};
+
+            // ViewData["Category"] = "Telefonlar";
+            // ViewData["Product"] = product;
+
+            ViewBag.Category = "Telefonlar";
+            // ViewBag.Product = product;
+
+            // ViewBag.Product
+            return View(product);
         }
-        public IActionResult List()
+        // product/list => tüm ürünleri (sayfalama)
+        // product/list/2 => 2 numaralı kategoriye ait ürünler
+        public IActionResult list(int? id) 
         {
-            var products = new List<Product>()
+            var products = ProductRepository.Products;
+
+            if (id!=null)
             {
-                new Product{Name="Iphone 8", price=3000, Description="İyi Telefon"},
-                new Product { Name = "Iphone x", price = 12.000, Description = "Çok İyi Telefon" },
-                new Product { Name = "Iphone 12 Min", price = 10.000, Description = "Mini Telefon" },
-                new Product { Name = "Iphone 13 Pro", price = 19.000, Description = "Mükemmel Telefon" }
-            };
-        
+                products = products.Where(p=>p.CategoryId==id).ToList();
+            }
+
             var productViewModel = new ProductViewModel()
             {
-                Products = products
+                Products =products
             };
+
             return View(productViewModel);
         }
+
         public IActionResult Details(int id)
         {
-            var p = new Product();
-            p.Name = "Samsun S6";
-            p.price = 6000;
-            p.Description = "İyi Telefon";
-            return View(p);
+            return View(ProductRepository.GetProductById(id));
         }
     }
 }

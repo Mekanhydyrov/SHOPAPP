@@ -1,12 +1,7 @@
-﻿using SHOPAPP.WEBUI.Controllers;
-using SHOPAPP.WEBUI.Models;
 using System.Collections.Generic;
+using shopapp.webui.Models;
 
-namespace SHOPAPP.WEBUI.ViewModels
+public class ProductViewModel
 {
-    public class ProductViewModel
-    {
         public List<Product> Products { get; set; }
-
-    }
 }

@@ -1,8 +1,8 @@
-﻿@model List<Category>
-
-<div class="list-group">
-    @foreach (var x in Model)
+ @model List<Category>
+ 
+ <div class="list-group">
+    @foreach (var category in Model)
     {
-        <a href="#" class="list-group-item list-group-item-action">@x.Name</a>
+        <a href="#" class="list-group-item list-group-item-action">@category.Name</a>
     }
-</div>
+</div>   

@@ -1,17 +1,7 @@
-﻿@{
-    Layout = null;
+@section Categories
+{
+    @await Component.InvokeAsync("Categories")
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    @await Html.PartialAsync("_navbar")
-    @await Html.PartialAsync("_header")
-    Product/Index
-</body>
-</html>
+product index

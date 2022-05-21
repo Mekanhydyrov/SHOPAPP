@@ -1,24 +1,33 @@
-﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using shopapp.webui.Data;
+using shopapp.webui.Models;
 
-namespace SHOPAPP.WEBUI.Controllers
+namespace shopapp.webui.Controllers
 {
-    public class HomeController : Controller
-    {
+    // localhost:5000/home
+    public class HomeController:Controller
+    {      
         public IActionResult Index()
         {
-            int saat = DateTime.Now.Hour;
-            ViewBag.Greeting = saat > 12 ? "İyi Günler" : "Günaydın";
-            ViewBag.UserName = "Mekan Hydyrov";
-            return View();
+            var productViewModel = new ProductViewModel()
+            {
+                Products = ProductRepository.Products
+            };
+
+            return View(productViewModel);
         }
+
+         // localhost:5000/home/about
         public IActionResult About()
         {
-            return View("About");
+            return View();
         }
-        public IActionResult Contact()
+
+         public IActionResult Contact()
         {
-            return View("Contact");
+            return View("MyView");
         }
     }
 }

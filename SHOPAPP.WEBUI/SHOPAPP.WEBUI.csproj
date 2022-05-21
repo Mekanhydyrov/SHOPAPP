@@ -5,7 +5,66 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="shopapp.webui\**" />
+    <Content Remove="shopapp.webui\**" />
+    <EmbeddedResource Remove="shopapp.webui\**" />
+    <None Remove="shopapp.webui\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\SHOPAPP.WEBUI.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+    <Content Include=".vscode\tasks.json" />
+    <Content Include="obj\Debug\netcoreapp3.1\project.razor.json" />
+    <Content Include="obj\Debug\netcoreapp3.1\shopapp.webui.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\shopapp.webui.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\netcoreapp3.1\SHOPAPP.WEBUI.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\shopapp.webui.assets.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\shopapp.webui.exe" />
+    <None Include="obj\Debug\netcoreapp3.1\SHOPAPP.WEBUI.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\netcoreapp3.1\shopapp.webui.Views.dll" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\shopapp.webui.csproj.nuget.cache" />
+    <None Include="obj\shopapp.webui.csproj.nuget.g.props" />
+    <None Include="obj\shopapp.webui.csproj.nuget.g.targets" />
+    <None Include="shopapp.webui.csproj" />
+    <None Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\MyView.cshtml" />
+    <None Include="Views\Product\Details.cshtml" />
+    <None Include="Views\Product\Index.cshtml" />
+    <None Include="Views\Product\List.cshtml" />
+    <None Include="Views\Shared\Components\Categories\Default.cshtml" />
+    <None Include="Views\Shared\_categories.cshtml" />
+    <None Include="Views\Shared\_header.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout2.cshtml" />
+    <None Include="Views\Shared\_navbar.cshtml" />
+    <None Include="Views\Shared\_noproduct.cshtml" />
+    <None Include="Views\Shared\_product.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp3.1\Properties\" />
+    <Folder Include="obj\Debug\netcoreapp3.1\Razor\Views\Home\" />
+    <Folder Include="obj\Debug\netcoreapp3.1\Razor\Views\Product\" />
+    <Folder Include="obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Categories\" />
+    <Folder Include="obj\Debug\netcoreapp3.1\staticwebassets\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
