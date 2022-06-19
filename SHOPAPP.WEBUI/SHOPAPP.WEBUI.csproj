@@ -67,4 +67,8 @@
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SHOPAPP.DATA\SHOPAPP.DATA.csproj" />
+  </ItemGroup>
+
 </Project>

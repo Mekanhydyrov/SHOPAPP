@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using SHOPAPP.DATA.Abstract;
+using SHOPAPP.DATA.Concrete.EfCore;
 
 namespace shopapp.webui
 {
@@ -20,6 +22,7 @@ namespace shopapp.webui
         {
             // mvc
             // razor pages
+            services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddControllersWithViews();
         }
 

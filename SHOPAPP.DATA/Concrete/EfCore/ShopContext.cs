@@ -10,7 +10,12 @@ namespace SHOPAPP.DATA.Concrete.EfCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlite("Data Source=shopDb");
+            optionsBuilder.UseSqlServer("Server = ******; Database = Inventory; Integrated Security = True;");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductCategory>()
+                .HasKey(c => new { c.CategoryId, c.ProductId });
         }
     }
 }
